@@ -1,7 +1,8 @@
 # Inferno Ripple Effect
-[Inferno](https://infernojs.org/) Component to Make Google Material Design Ripple Effect. It's based on [react-ripple](https://github.com/BosNaufal/react-ripple)
+[Inferno](https://infernojs.org/) Component to make Google material design ripple effect. It's adopted from [react-ripple](https://github.com/BosNaufal/react-ripple)
 
 [DEMO](https://bosnaufal.github.io/react-ripple)
+
 
 ## Install
 todo
@@ -15,16 +16,17 @@ npm install react-ripple-effect
 ```
 -->
 
+
 ## Usage
 
 ### Usage With Predefined Ripple Button
 
-```javascript
+```js
 import { RippleButton } from 'inferno-ripple-effect'
 ```
 
 then in your render function
-```javascript
+```jsx
 <RippleButton>First ripple button</RippleButton>
 ```
 
@@ -32,6 +34,9 @@ See [detailed example](./src/index.tsx)
 
 
 ### Add ripple effect to any div
+```js
+import { RippleEffect } from 'inferno-ripple-effect'
+```
 
 todo
 
