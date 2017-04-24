@@ -17,15 +17,21 @@ class MyComponent extends Component<any, any> {
 				<br/>
 				<h1>Ripple button example</h1>
 				<br/>
+
+				<RippleButton>First ripple button</RippleButton>
+				<br/>
+				<br/>
+				 
 				<RippleButton style={{
 					'background': 'silver',
 					'border': '0',
 					'border-radius': '5px',
 					'padding': '10px 30px'
-				}}>RippleButton</RippleButton>
+				}}>Second </RippleButton>
 
 				<br />
 				<br />
+
 				<RippleButton className={'my-ripple-button'}>RippleButton 2</RippleButton>
 			</div>
 		);
