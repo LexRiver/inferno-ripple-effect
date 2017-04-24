@@ -1,0 +1,18 @@
+#app{
+    text-align: center;
+}
+
+.my-ripple-button{
+  border: none;
+  border-radius: 2px;
+  background: #3d98d9;
+  color: white;
+  padding: 15px 30px;
+}
+
+@keyframes ripple{
+  100%{
+    opacity: 0;
+    transform: scale(3);
+  }
+}

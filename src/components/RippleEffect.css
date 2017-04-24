@@ -1,0 +1,6 @@
+@keyframes ripple-effect-animation{
+  100%{
+    opacity: 0;
+    transform: scale(3);
+  }
+}
