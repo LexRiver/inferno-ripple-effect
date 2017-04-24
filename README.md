@@ -19,7 +19,7 @@ npm install react-ripple-effect
 
 ## Usage
 
-### Usage With Predefined Ripple Button
+### Usage with predefined RippleButton
 
 ```js
 import { RippleButton } from 'inferno-ripple-effect'
