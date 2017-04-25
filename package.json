@@ -1,6 +1,6 @@
 {
   "name": "inferno-ripple-effect",
-  "version": "2017.4.20.1",
+  "version": "0.1.1",
   "description": "Ripple effect for InfernoJS",
   "main": "export/index.js",
   "scripts": {
@@ -11,10 +11,14 @@
     "compile-module": "cpx ./src/**/*.css ./export && tsc -p tsconfig.module.json"
   },
   "keywords": [
+    "animation",
+    "transition",
+    "effect",
     "material",
     "ripple",
     "button",
     "inferno",
+    "infernojs",
     "typescript"
   ],
   "author": "LexRiver",

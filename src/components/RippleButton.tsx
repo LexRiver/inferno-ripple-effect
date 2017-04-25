@@ -1,8 +1,6 @@
 import Component from 'inferno-component'
 import { RippleEffect } from "./RippleEffect"
 
-//import '../styles/Ripple.scss';
-
 interface Props {
 	onClick: any
 }
@@ -27,8 +25,7 @@ export class RippleButton extends Component<Props, State> {
 		})
 
 		return (
-			<button 
-			className="ripple" 
+			<button
 			onMouseUp={this.handleClick}
 			onTouchend={this.handleClick}
 			onKeyUp={this.handleKeyUp}
@@ -48,8 +45,7 @@ export class RippleButton extends Component<Props, State> {
 			left: e.clientX,
 			time: Date.now()
 		}
-        //console.log('handleClick, cursorPos=', cursorPos);
-		this.setState({ cursorPos: cursorPos })
+		this.setState({ cursorPos })
 
 		// raise parent event
 		if(this.props.onClick) {

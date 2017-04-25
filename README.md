@@ -4,17 +4,17 @@
 [DEMO](https://bosnaufal.github.io/react-ripple)
 
 
-## Install
-todo
-<!--
-You can import [react-ripple](./src/js/components/index.js) to your react component file like [this](./src/js/components/app.js) and process it with your preprocessor.;
+## How to run example
 
-
-You can install it via NPM
+Just clone or download this repository and run example
 ```bash
-npm install react-ripple-effect
+git clone https://github.com/LexRiver/inferno-ripple-effect.git
+cd inferno-ripple-effect
+npm install
+npm start
 ```
--->
+then open [localhost:8080] in your browser
+
 
 
 ## Usage
@@ -27,18 +27,33 @@ import { RippleButton } from 'inferno-ripple-effect'
 
 then in your render function
 ```jsx
-<RippleButton>First ripple button</RippleButton>
+<RippleButton onClick={myEvent}>First ripple button</RippleButton>
 ```
 
 See [detailed example](./src/index.tsx)
 
 
-### Add ripple effect to any div
-```js
-import { RippleEffect } from 'inferno-ripple-effect'
-```
+### Add ripple effect to any div or your component
+Please see [RippleButton](./src/components/RippleButton.tsx) example to create your own component with ripple effect.
 
-todo
+The most important steps:
+- add RippleEffect child component to your component
+```jsx
+<RippleEffect cursorPos={this.state.cursorPos} duration={500} color={'rgba(0,0,0,0.2)'}
+``` 
+- set style of your component to ```position: relative; overflow: hidden```, position can't be ```static```
+- on click event update cursorPos like this
+```js
+	handleClick = (e) => {
+		// Get Cursor Position
+		let cursorPos = {
+			top: e.clientY,
+			left: e.clientX,
+			time: Date.now()
+		}
+		this.setState({ cursorPos: cursorPos })
+    }
+```
 
 
 

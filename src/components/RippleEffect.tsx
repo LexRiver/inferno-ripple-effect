@@ -20,7 +20,7 @@ export class RippleEffect extends Component<Props, State> {
 
     static get defaultProps() {
         return {
-            duration: 1000,
+            duration: 500,
             color: 'rgba(0,0,0,0.2)'
         }
     }
@@ -99,7 +99,6 @@ export class RippleEffect extends Component<Props, State> {
             // If Has Animated, set state to "false" First
             if (this.state.animate) {
                 this.setState({ animate: false }, () => {
-                    //console.log('******************* second');
                     this.animateRippling(cursorPos)
                 })
             }

@@ -22,12 +22,17 @@ class MyComponent extends Component<any, any> {
 				<br/>
 				<br/>
 				 
-				<RippleButton style={{
+				<RippleButton 
+				style={{
 					'background': 'silver',
 					'border': '0',
 					'border-radius': '5px',
 					'padding': '10px 30px'
-				}}>Second </RippleButton>
+				}}
+				onClick={this.onClick}
+				>
+				Second
+				</RippleButton>
 
 				<br />
 				<br />
@@ -35,6 +40,10 @@ class MyComponent extends Component<any, any> {
 				<RippleButton className={'my-ripple-button'}>RippleButton 2</RippleButton>
 			</div>
 		);
+	}
+
+	onClick = () => {
+		console.log(`clicked at ${new Date()}`)
 	}
 }
 
