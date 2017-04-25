@@ -13,24 +13,20 @@ cd inferno-ripple-effect
 npm install
 npm start
 ```
-then open [localhost:8080] in your browser
+then open localhost:8080 in your browser
 
 
 
 ## Usage
 
-### Usage with predefined RippleButton
+### Using predefined RippleButton
 
-```js
-import { RippleButton } from 'inferno-ripple-effect'
-```
-
-then in your render function
 ```jsx
-<RippleButton onClick={myEvent}>First ripple button</RippleButton>
+<RippleButton onClick={myEvent}>My ripple button</RippleButton>
 ```
 
 See [detailed example](./src/index.tsx)
+
 
 
 ### Add ripple effect to any div or your component
@@ -39,7 +35,9 @@ Please see [RippleButton](./src/components/RippleButton.tsx) example to create y
 The most important steps:
 - add RippleEffect child component to your component
 ```jsx
-<RippleEffect cursorPos={this.state.cursorPos} duration={500} color={'rgba(0,0,0,0.2)'}
+<div...>
+    <RippleEffect cursorPos={this.state.cursorPos} duration={500} color={'rgba(0,0,0,0.2)'}
+</div>
 ``` 
 - set style of your component to ```position: relative; overflow: hidden```, position can't be ```static```
 - on click event update cursorPos like this
