@@ -19,7 +19,7 @@ then open localhost:8080 in your browser
 
 ## Installation
 
-No npm installation yet, just copy ```RippleButton.tsx```, ```RippleEffect.css```, ```RippleEffect.tsx``` to your project and modify as you need. If you are using ```jsx```, just rename the files and remove interfaces.
+No npm installation yet, just copy ```RippleButton.tsx```, ```RippleEffect.css```, ```RippleEffect.tsx``` to your project and modify them as you need. If you are using ```jsx```, just rename the ```tsx``` files and remove interfaces.
 
 <br/>
 
