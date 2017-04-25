@@ -15,7 +15,13 @@ npm start
 ```
 then open localhost:8080 in your browser
 
+<br/>
 
+## Installation
+
+No npm installation yet, just copy ```RippleButton.tsx```, ```RippleEffect.css```, ```RippleEffect.tsx``` to your project and modify as you need. If you are using ```jsx```, just rename the files and remove interfaces.
+
+<br/>
 
 ## Usage
 
@@ -27,7 +33,7 @@ then open localhost:8080 in your browser
 
 See [detailed example](./src/index.tsx)
 
-
+<br/>
 
 ### Add ripple effect to any div or your component
 Please see [RippleButton](./src/components/RippleButton.tsx) example to create your own component with ripple effect.
@@ -35,9 +41,9 @@ Please see [RippleButton](./src/components/RippleButton.tsx) example to create y
 The most important steps:
 - add RippleEffect child component to your component
 ```jsx
-<div...>
-    <RippleEffect cursorPos={this.state.cursorPos} duration={500} color={'rgba(0,0,0,0.2)'}
-</div>
+    <div...>
+        <RippleEffect cursorPos={this.state.cursorPos} duration={500} color={'rgba(0,0,0,0.2)'} />
+    </div>
 ``` 
 - set style of your component to ```position: relative; overflow: hidden```, position can't be ```static```
 - on click event update cursorPos like this
@@ -53,7 +59,8 @@ The most important steps:
     }
 ```
 
-
+<br/>
+<br/>
 
 ## Credits
 - [react-ripple](https://github.com/BosNaufal/react-ripple)
