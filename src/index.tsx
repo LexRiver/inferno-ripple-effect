@@ -18,7 +18,7 @@ class MyComponent extends Component<any, any> {
 				<h1>Ripple button example</h1>
 				<br/>
 
-				<RippleButton>First ripple button</RippleButton>
+				<RippleButton onClick={this.onClick}>First ripple button</RippleButton>
 				<br/>
 				<br/>
 				 
@@ -30,6 +30,7 @@ class MyComponent extends Component<any, any> {
 					'padding': '10px 30px'
 				}}
 				onClick={this.onClick}
+				
 				>
 				Second
 				</RippleButton>

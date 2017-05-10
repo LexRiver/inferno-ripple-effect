@@ -33,9 +33,18 @@ export class RippleButton extends Component<Props, State> {
 			{...other}
 			>
 				{this.props.children}
-				<RippleEffect cursorPos={this.state.cursorPos} duration={500} color={'rgba(0,0,0,0.2)'} />
+				<RippleEffect cursorPos={this.state.cursorPos} duration={500} eventDelay={200} color={'rgba(0,0,0,0.2)'} onAnimationEnd={this.onAnimationEnd.bind(this)} />
 			</button>
 		)
+	}
+
+	onAnimationEnd(){
+		// raise parent onClick event
+		//console.log('onClick')
+		if(this.props.onClick) {
+			if(typeof this.props.onClick != 'function') throw 'this.props.onClick is not a function'
+			this.props.onClick()
+		}
 	}
 
 	handleClick = (e) => {
@@ -47,11 +56,6 @@ export class RippleButton extends Component<Props, State> {
 		}
 		this.setState({ cursorPos })
 
-		// raise parent event
-		if(this.props.onClick) {
-			if(typeof this.props.onClick != 'function') throw 'this.props.onClick is not a function'
-			this.props.onClick()
-		}
 	}
 
 

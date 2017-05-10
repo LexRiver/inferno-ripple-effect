@@ -1,9 +1,13 @@
 import Component from 'inferno-component';
 
 import './RippleEffect.css';
+import { debounce } from "../utils/debounce";
 
 interface Props {
     duration: number
+    eventDelay: number
+    color: string
+    onAnimationEnd: ()=>void
 }
 
 interface State {
@@ -20,7 +24,8 @@ export class RippleEffect extends Component<Props, State> {
 
     static get defaultProps() {
         return {
-            duration: 500,
+            duration: 300,
+            eventDelay: 301,
             color: 'rgba(0,0,0,0.2)'
         }
     }
@@ -35,7 +40,7 @@ export class RippleEffect extends Component<Props, State> {
 
 
     render() {
-        let styles = {
+        let styles:any = {
             "position": 'absolute',
             "background": this.props.color,
             "border-radius": "50%",
@@ -47,15 +52,11 @@ export class RippleEffect extends Component<Props, State> {
             height: this.state.height + "px"
         }
         if (this.state.animate) {
-            Object.assign(styles,
-                {
-                    "animation": `ripple-effect-animation ${this.props.duration}ms linear`
-                })
+            styles.animation = `ripple-effect-animation ${this.props.duration}ms linear`
         }
 
-
         return (
-            <div style={styles} ref={(x) => this.element = x}></div>
+            <div style={styles} ref={(x) => {this.element = x}}></div>
         )
     }
 
@@ -86,8 +87,19 @@ export class RippleEffect extends Component<Props, State> {
 			left: cursorPos.left - buttonPos.left - centerize
 		})
 
+        //log('debounce here, eventDelay=', this.props.eventDelay)
+        //debounce(() => this.fireEvent, this.props.eventDelay)()
+        this.fireEvent()
 
     }
+
+    fireEvent = debounce(function(){
+        //log('RippleEffect','fire event once')
+        if(this.props.onAnimationEnd) {
+            this.props.onAnimationEnd()
+        }
+    }, this.props.eventDelay)
+
 
     componentWillReceiveProps(nextProps) {
         // on click, this component must receive prop.cursorPos
