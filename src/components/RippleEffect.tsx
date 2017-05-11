@@ -25,7 +25,7 @@ export class RippleEffect extends Component<Props, State> {
     static get defaultProps() {
         return {
             duration: 300,
-            eventDelay: 301,
+            eventDelay: 305,
             color: 'rgba(0,0,0,0.2)'
         }
     }
@@ -73,22 +73,26 @@ export class RippleEffect extends Component<Props, State> {
         let buttonWidth = $button.offsetWidth
         let buttonHeight = $button.offsetHeight
 
-        // Make a Square Ripple
-        let rippleWidthShouldBe = Math.max(buttonHeight, buttonWidth)
+        let buttonCursorLeft = cursorPos.left - buttonPos.left
+        let buttonCursorTop = cursorPos.top - buttonPos.top
 
-        // Make Ripple Position to be center
-        let centerize = rippleWidthShouldBe / 2
+        let halfRippleSize = Math.max(
+            buttonCursorLeft, 
+            buttonWidth-buttonCursorLeft,
+            buttonCursorTop,
+            buttonHeight-buttonCursorTop
+            )
+
+        halfRippleSize *= 1.2
 
 		this.setState({
 			animate: true,
-			width: rippleWidthShouldBe,
-			height: rippleWidthShouldBe,
-			top: cursorPos.top - buttonPos.top - centerize,
-			left: cursorPos.left - buttonPos.left - centerize
+			width: halfRippleSize*2,
+			height: halfRippleSize*2,
+			top: cursorPos.top - buttonPos.top - halfRippleSize,
+			left: cursorPos.left - buttonPos.left - halfRippleSize
 		})
 
-        //log('debounce here, eventDelay=', this.props.eventDelay)
-        //debounce(() => this.fireEvent, this.props.eventDelay)()
         this.fireEvent()
 
     }

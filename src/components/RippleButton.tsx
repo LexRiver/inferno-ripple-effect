@@ -33,7 +33,7 @@ export class RippleButton extends Component<Props, State> {
 			{...other}
 			>
 				{this.props.children}
-				<RippleEffect cursorPos={this.state.cursorPos} duration={500} eventDelay={200} color={'rgba(0,0,0,0.2)'} onAnimationEnd={this.onAnimationEnd.bind(this)} />
+				<RippleEffect cursorPos={this.state.cursorPos} duration={300} eventDelay={200} color={'rgba(0,0,0,0.2)'} onAnimationEnd={this.onAnimationEnd.bind(this)} />
 			</button>
 		)
 	}
